@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import database from '@react-native-firebase/database';
-import { Container,Textarea, Header, Content, Form, Item,Icon,  Label} from 'native-base';
+import { Container,Textarea, Header, Content, Form, Item,Icon,  Label, Card, CardItem} from 'native-base';
 import { Text ,Button ,TextInput,View} from 'react-native';
 function Contact(){
 
@@ -36,16 +36,16 @@ function Contact(){
   }
       return (
       <Container>
-        <Header />
+        {/* <Header /> */}
         <Content>
           <Form>
             <Item inlineLabel>
               <Label>Name</Label>
-              <TextInput defaultValue={name}  onChangeText={(text)=>setname(text)}/>
+              <TextInput defaultValue={name} placeholder="Enter Name" onChangeText={(text)=>setname(text)}/>
             </Item>
             <Item inlineLabel last>
               <Label>Email</Label>
-              <TextInput defaultValue={email} placeholder="Enter Message" onChangeText={(text)=>setemail(text)}/>
+              <TextInput defaultValue={email} placeholder="Enter Email" onChangeText={(text)=>setemail(text)}/>
             </Item>
             <Item>
             <TextInput defaultValue={Message}   placeholder="Enter Message"  onChangeText={(text)=>setmessage(text)}/>
@@ -53,11 +53,19 @@ function Contact(){
             <Button title="Send" onPress={()=>Save()}></Button>
           </Form>
           <View>
-          <Text>You can contact also:
+            <Card>
+              <CardItem>
+          <Text style={{fontSize:20}}>You can also contact on: {"\n"} {"\n"} {"\n"} {"\n"}
           </Text>
-          <Text> <Icon name='work' />gujjartayyab9494@gmail.com
-
+         
+          <Text style={{position:'absolute',fontSize:15,fontFamily:'serif'}}> gujjartayyab9494@gmail.com
+          
+         
           </Text>
+          <Text  style={{position:'absolute',fontSize:15,fontFamily:'serif'}} >
+          {"\n"}   {"\n"} {"\n"}03037902194</Text>
+          </CardItem>
+          </Card>
           </View>
         </Content>
       </Container>

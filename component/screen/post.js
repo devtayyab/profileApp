@@ -5,7 +5,6 @@ const img=require('../../download.jpg')
 function Post(){
     return (
       <Container>
-        
         <Content>
           <Card>
             <CardItem>

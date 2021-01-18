@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { Container,View, Header, Content, Footer, FooterTab, Button, Icon, Text, Badge } from 'native-base';
-import Post from './screen/post'
-import { ScrollView } from 'react-native-gesture-handler';
+import DeckSwiperrr from './slider'
+import Service from './screen/Services'
+import About from './about'
 function Footter({navigation}) {
  
     return (
@@ -14,29 +15,32 @@ function Footter({navigation}) {
 
      
     
-        {/* <Header>
-          <Text style={{color: "white"}}>Practice App</Text>
-        </Header> */}
+<Header style={{backgroundColor:'white'}}>
+            <Text style={{fontSize:30,color:'darkblue',fontFamily: "serif"}}>WellCome To SufiCloud</Text>
+        </Header>
         <Content>
-        <Post></Post>
-        <Post></Post>
-        <Post></Post>
+       <DeckSwiperrr></DeckSwiperrr>
+       <Service></Service>
+       {/* <Header style={{backgroundColor:'white'}}>
+            <Text style={{fontSize:30,color:'darkblue'}}>About Us</Text>
+        </Header>
+       <About></About> */}
         </Content>
         <Footer style={{bottom:0}}>
           <FooterTab>
-            <Button badge vertical onPress={() => navigation.navigate('Dtail')}>
-              <Badge><Text>2</Text></Badge>
+            <Button badge vertical onPress={() => navigation.navigate('SufiCloud')}>
+              <Badge><Text>.</Text></Badge>
               <Icon name="apps" />
               <Text>Home</Text>
             </Button>
-            <Button vertical onPress={() => navigation.navigate('Slider')}>
+            <Button vertical onPress={() => navigation.navigate('services')}>
               <Icon name="camera" />
-              <Text>Camera</Text>
+              <Text>Services</Text>
             </Button>
-            <Button active badge vertical onPress={() => navigation.navigate('Servicess')}>
-              <Badge ><Text>51</Text></Badge>
+            <Button active badge vertical onPress={() => navigation.navigate('About')}>
+              <Badge ><Text>.</Text></Badge>
               <Icon active name="navigate" />
-              <Text>Message</Text>
+              <Text>About Us</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate('Contact Us')}>
               <Icon name="person" />
